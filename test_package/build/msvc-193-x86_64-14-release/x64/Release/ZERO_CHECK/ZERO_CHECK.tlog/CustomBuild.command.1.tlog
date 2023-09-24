@@ -1,0 +1,10 @@
+^C:\USERS\ERYKM\DESKTOP\MELTRIX\TEST_PACKAGE\BUILD\MSVC-193-X86_64-14-RELEASE\CMAKEFILES\625296FE81E7293C1479D53E0E4C133B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/erykm/Desktop/Meltrix/test_package -BC:/Users/erykm/Desktop/Meltrix/test_package/build/msvc-193-x86_64-14-release --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/erykm/Desktop/Meltrix/test_package/build/msvc-193-x86_64-14-release/PackageTest.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
