@@ -34,3 +34,4 @@
 # Specific folders
 /build
 /.idea
+/test_package/build
