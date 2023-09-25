@@ -1,4 +1,6 @@
 set( SOURCE_LIST
-        "src/meltrix.cpp"
+        "src/MatrixBase.cpp"
+        "src/ZeroMatrix.cpp"
+        "src/IdentityMatrix.cpp"
     PARENT_SCOPE
 )

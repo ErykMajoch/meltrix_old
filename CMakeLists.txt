@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(include)
 add_subdirectory(src)
 
-add_library("${PROJECT_NAME}" ${SOURCE_LIST})
+add_library("${PROJECT_NAME}" ${SOURCE_LIST} )
 target_include_directories("${PROJECT_NAME}" PUBLIC include)
 set_target_properties("${PROJECT_NAME}" PROPERTIES PUBLIC_HEADER "${HEADER_LIST}")
 
