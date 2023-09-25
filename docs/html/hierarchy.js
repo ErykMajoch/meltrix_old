@@ -1,7 +1,7 @@
 var hierarchy =
 [
-    [ "ConanFile", null, [
-      [ "conanfile.meltrixRecipe", "a00024.html", null ],
-      [ "conanfile.meltrixTestConan", "a00028.html", null ]
+    [ "meltrix::Matrix", "a00031.html", [
+      [ "meltrix::IdentityMatrix", "a00027.html", null ],
+      [ "meltrix::ZeroMatrix", "a00035.html", null ]
     ] ]
 ];
