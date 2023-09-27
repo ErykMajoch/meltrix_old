@@ -12,7 +12,6 @@ namespace meltrix {
     /// <summary>
     /// The base matrix class
     /// </summary>
-
     class Matrix {
     public:
 
@@ -45,6 +44,7 @@ namespace meltrix {
 
         // Matrix Functions
         Matrix dot(Matrix& other);
+        void applyFunction(double (*func)(double));
 
         // Utility Functions
         void print() const;

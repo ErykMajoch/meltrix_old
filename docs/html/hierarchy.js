@@ -1,7 +1,8 @@
 var hierarchy =
 [
-    [ "meltrix::Matrix", "a00031.html", [
-      [ "meltrix::IdentityMatrix", "a00027.html", null ],
-      [ "meltrix::ZeroMatrix", "a00035.html", null ]
+    [ "meltrix::Matrix", "a00037.html", [
+      [ "meltrix::IdentityMatrix", "a00033.html", null ],
+      [ "meltrix::RandomMatrix", "a00041.html", null ],
+      [ "meltrix::ZeroMatrix", "a00045.html", null ]
     ] ]
 ];
