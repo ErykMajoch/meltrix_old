@@ -25,6 +25,12 @@
 var NAVTREE =
 [
   [ "Meltrix", "index.html", [
+    [ "Introduction", "index.html#autotoc_md1", null ],
+    [ "Code Examples", "index.html#autotoc_md2", null ],
+    [ "Installation", "index.html#autotoc_md3", [
+      [ "Locally", "index.html#autotoc_md4", null ]
+    ] ],
+    [ "License", "index.html#autotoc_md5", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
