@@ -5,16 +5,16 @@
 int main() {
     using namespace meltrix;
 
-    Matrix m1 = IdentityMatrix(4);
+    std::cout << "Uniform Distribution: \n";
+    Matrix m = RandomMatrix(3, 3, meltrix::UNIFORM);
+    m.print();
 
-    Matrix m2 = Matrix(4, 3, {
-        13, 9, 7,
-        8, 7, 4,
-        6, 4, 0,
-        2, 4, 1
-    });
+    std::cout << "Binomial Distribution: \n";
+    Matrix m2 = RandomMatrix(3, 3, meltrix::BINOMIAL);
+    m2.print();
 
-    Matrix m3 = m1.dot(m2);
+    std::cout << "Normal Distribution: \n";
+    Matrix m3 = RandomMatrix(3, 3, meltrix::NORMAL);
     m3.print();
 
     return 0;
