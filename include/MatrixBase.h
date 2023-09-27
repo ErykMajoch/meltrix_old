@@ -44,11 +44,10 @@ namespace meltrix {
         Matrix getSubMatrix(int rowStart, int rowEnd, int colStart, int colEnd);
 
         // Matrix Functions
-        void dot(Matrix& other);
+        Matrix dot(Matrix& other);
 
         // Utility Functions
         void print() const;
-
 
         // Destructor
         ~Matrix() = default;

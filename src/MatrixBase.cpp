@@ -191,7 +191,7 @@ namespace meltrix {
         }
         Matrix result(1, m_Cols);
         for (int i = 0; i < m_Cols; i++) {
-            result(0, i) = (*this)(row, i);
+            result(0, i) = m_Data[row * m_Cols + i];
         }
         return result;
     }
@@ -205,7 +205,7 @@ namespace meltrix {
         }
         Matrix result(m_Rows, 1);
         for (int i = 0; i < m_Rows; i++) {
-            result(i, 0) = (*this)(i, col);
+            result(i, 0) = m_Data[i * m_Cols + col];
         }
         return result;
     }
@@ -226,7 +226,7 @@ namespace meltrix {
         Matrix result(rowEnd - rowStart + 1, colEnd - colStart + 1);
         for (int i = rowStart; i <= rowEnd; i++) {
             for (int j = colStart; j <= colEnd; j++) {
-                result(i - rowStart, j - colStart) = (*this)(i, j);
+                result(i - rowStart, j - colStart) = m_Data[i * m_Cols + j];
             }
         }
         return result;
@@ -236,21 +236,24 @@ namespace meltrix {
     // ===== MATRIX FUNCTIONS ====== //
     // ============================= //
 
-    /// \brief Matrix dot product
-    /// \param other The matrix to calculate the dot product with
-    void Matrix::dot(Matrix &other) {
+    /// \brief Matrix multiplication
+    /// \param other The matrix to multiply
+    /// \return The resulting matrix
+    Matrix Matrix::dot(Matrix& other) {
         if (m_Cols != other.m_Rows) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
         Matrix result(m_Rows, other.m_Cols);
         for (int i = 0; i < m_Rows; i++) {
             for (int j = 0; j < other.m_Cols; j++) {
+                double sum = 0;
                 for (int k = 0; k < m_Cols; k++) {
-                    result(i, j) += (*this)(i, k) * other(k, j);
+                    sum += m_Data[i * m_Cols + k] * other.m_Data[k * other.m_Cols + j];
                 }
+                result(i, j) = sum;
             }
         }
-        *this = result;
+        return result;
     }
 
     // ============================= //
@@ -275,7 +278,7 @@ namespace meltrix {
             }
             std::cout << "│\n";
         }
-        std::cout << "└ " << std::setw(maxLen * m_Cols + m_Cols - 1) << " " << " ┘";
+        std::cout << "└ " << std::setw(maxLen * m_Cols + m_Cols - 1) << " " << " ┘\n";
     }
 
 } // meltrix

@@ -6,7 +6,7 @@ var a00031 =
     [ "Matrix", "a00031.html#a8dbd90f9bbe1bc5d39179e508243cc06", null ],
     [ "Matrix", "a00031.html#a34296b486071b9503da9b7786fad139b", null ],
     [ "~Matrix", "a00031.html#a7a51fbdd3d541e6d3554272fcbbab4b2", null ],
-    [ "dot", "a00031.html#af76e8ebfa7c3d0e63eba14d7b353b2ee", null ],
+    [ "dot", "a00031.html#a485806ac6a1b325171b151872127f616", null ],
     [ "getCol", "a00031.html#ab5083aa21f3aa1c8252e9c602bf45d49", null ],
     [ "getRow", "a00031.html#a5513ed51b101e3d8daaa497d5a715497", null ],
     [ "getSubMatrix", "a00031.html#aa4e7e0455394acd160038c1df96ac875", null ],

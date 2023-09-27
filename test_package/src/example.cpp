@@ -4,19 +4,18 @@
 
 int main() {
     using namespace meltrix;
-    Matrix m = IdentityMatrix(4);
-    Matrix m2 = Matrix(4, 4, {
-        1.001, 2, 3, 4,
-        5, 63, 7, 8,
-        9, 10.00000322, 11, 12,
-        13, 14, 15, 16133.233
-    });
-    Matrix m3 = Matrix(3, 5, 0.00212);
 
-    m.print();
-    std::cout << "\n";
-    m2.print();
-    std::cout << "\n";
+    Matrix m1 = IdentityMatrix(4);
+
+    Matrix m2 = Matrix(4, 3, {
+        13, 9, 7,
+        8, 7, 4,
+        6, 4, 0,
+        2, 4, 1
+    });
+
+    Matrix m3 = m1.dot(m2);
     m3.print();
+
     return 0;
 }
