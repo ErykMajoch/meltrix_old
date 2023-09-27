@@ -1,4 +1,4 @@
 var a00002 =
 [
-    [ "meltrix::IdentityMatrix", "a00033.html", "a00033" ]
+    [ "meltrix::IdentityMatrix", "a00036.html", "a00036" ]
 ];
