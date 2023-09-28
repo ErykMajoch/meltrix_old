@@ -10,5 +10,6 @@ add_subdirectory(src)
 add_library("${PROJECT_NAME}" ${SOURCE_LIST} )
 target_include_directories("${PROJECT_NAME}" PUBLIC include)
 set_target_properties("${PROJECT_NAME}" PROPERTIES PUBLIC_HEADER "${HEADER_LIST}")
+set_target_properties("${PROJECT_NAME}" PROPERTIES VERSION ${PROJECT_VERSION})
 
 install(TARGETS "${PROJECT_NAME}")
