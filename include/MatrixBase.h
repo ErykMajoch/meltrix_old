@@ -7,6 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <functional>
+#include <utility>
 
 namespace meltrix {
 
@@ -41,7 +42,7 @@ namespace meltrix {
         double& operator()(int row, int col);
         Matrix getRow(int row);
         Matrix getCol(int col);
-        Matrix getSubMatrix(int rowStart, int rowEnd, int colStart, int colEnd);
+        Matrix getSubMatrix(int row, int col);
 
         // Matrix Functions
         Matrix dot(Matrix& other);
@@ -50,6 +51,7 @@ namespace meltrix {
 
         // Utility Functions
         void print() const;
+        std::pair<int, int> shape();
 
         // Destructor
         ~Matrix() = default;

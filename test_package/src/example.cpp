@@ -9,10 +9,15 @@ int main() {
 
     std::cout << "Current matrix:\n";
     m.print();
+    std::pair<int, int> s = m.shape();
+    std::cout << "\nMatrix shape: [" << s.first << "," << s.second << "]\n";
 
-    std::cout << "\nAfter transposition:\n";
     m.transpose();
+    std::cout << "Matrix after transposition:\n";
     m.print();
+    s = m.shape();
+    std::cout << "\nMatrix shape: [" << s.first << "," << s.second << "]\n";
+
 
     return 0;
 }

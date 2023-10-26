@@ -4,6 +4,6 @@
         "conan": {}
     },
     "include": [
-        "C:\\Users\\erykm\\Desktop\\Meltrix\\test_package\\build\\msvc-193-x86_64-14-release\\generators\\CMakePresets.json"
+        "/mnt/c/Users/Eryk Majoch/Desktop/Meltrix/test_package/build/gcc-13-x86_64-gnu17-release/generators/CMakePresets.json"
     ]
 }
