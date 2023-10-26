@@ -1,9 +1,0 @@
-{
-    "version": 4,
-    "vendor": {
-        "conan": {}
-    },
-    "include": [
-        "/mnt/c/Users/Eryk Majoch/Desktop/Meltrix/test_package/build/gcc-13-x86_64-gnu17-release/generators/CMakePresets.json"
-    ]
-}
