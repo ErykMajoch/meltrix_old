@@ -4,7 +4,7 @@ from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 
 class meltrixRecipe(ConanFile):
     name = "meltrix"
-    version = "0.0.2"
+    version = "0.0.3"
 
     # Optional metadata
     license = "GPL 3.0 license "

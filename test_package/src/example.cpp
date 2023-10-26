@@ -1,21 +1,19 @@
 #include "meltrix.h"
 
 #include <iostream>
+#include <cmath>
 
 int main() {
     using namespace meltrix;
+    Matrix m = Matrix(4, 3, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
 
-    std::cout << "Uniform Distribution: \n";
-    Matrix m = RandomMatrix(3, 3, meltrix::UNIFORM);
+    std::cout << "Current matrix:\n";
     m.print();
 
-    std::cout << "Binomial Distribution: \n";
-    Matrix m2 = RandomMatrix(3, 3, meltrix::BINOMIAL);
-    m2.print();
+    m.applyFunction([](double a) {return std::sin(a);});
 
-    std::cout << "Normal Distribution: \n";
-    Matrix m3 = RandomMatrix(3, 3, meltrix::NORMAL);
-    m3.print();
+    std::cout << "\nAfter function:\n";
+    m.print();
 
     return 0;
 }

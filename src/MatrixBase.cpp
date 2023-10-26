@@ -256,6 +256,10 @@ namespace meltrix {
         return result;
     }
 
+    void Matrix::applyFunction(const std::function<double(double)>& func) {
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), func);
+    }
+
     // ============================= //
     // ===== UTILITY FUNCTIONS ===== //
     // ============================= //

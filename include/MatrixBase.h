@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <string>
 #include <algorithm>
+#include <functional>
 
 namespace meltrix {
 
@@ -44,7 +45,7 @@ namespace meltrix {
 
         // Matrix Functions
         Matrix dot(Matrix& other);
-        void applyFunction(double (*func)(double));
+        void applyFunction(const std::function<double(double)>& func);
 
         // Utility Functions
         void print() const;
