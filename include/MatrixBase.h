@@ -54,8 +54,8 @@ namespace meltrix {
         ~Matrix() = default;
 
     protected:
-        unsigned int m_Rows = 0;
-        unsigned int m_Cols = 0;
+        int m_Rows = 0;
+        int m_Cols = 0;
         std::vector<double> m_Data = {};
     };
 

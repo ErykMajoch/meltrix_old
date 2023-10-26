@@ -10,7 +10,7 @@ namespace meltrix {
         m_Rows = rows;
         m_Cols = cols;
         m_Data.resize(rows * cols);
-    };
+    }
 
     Matrix::Matrix(int rows, int cols, const double& value)
     {
@@ -40,7 +40,7 @@ namespace meltrix {
         m_Rows = other.m_Rows;
         m_Cols = other.m_Cols;
         m_Data = other.m_Data;
-    };
+    }
 
     // ============================= //
     // ===== SCALAR OPERATIONS ===== //
@@ -48,50 +48,38 @@ namespace meltrix {
 
     Matrix Matrix::operator+(const double &scalar) const
     {
-        Matrix result = *this;
-        for (double x : result.m_Data) {
-            x += scalar;
-        }
-        return result;
+        std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n+scalar;});
+        return Matrix(m_Rows, m_Cols, newData);
     }
 
     Matrix Matrix::operator-(const double &scalar) const
     {
-        Matrix result = *this;
-        for (double x : result.m_Data) {
-            x -= scalar;
-        }
-        return result;
+        std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n-scalar;});
+        return Matrix(m_Rows, m_Cols, newData);
     }
 
     Matrix Matrix::operator*(const double &scalar) const
     {
-        Matrix result = *this;
-        for (double x : result.m_Data) {
-            x *= scalar;
-        }
-        return result;
+        std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n*scalar;});
+        return Matrix(m_Rows, m_Cols, newData);
     }
 
     void Matrix::operator+=(const double &scalar)
     {
-        for (double x : m_Data) {
-            x += scalar;
-        }
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n+scalar;});
     }
 
     void Matrix::operator-=(const double &scalar)
     {
-        for (double x : m_Data) {
-            x -= scalar;
-        }
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n-scalar;});
     }
 
     void Matrix::operator*=(const double &scalar)
     {
-        for (double x : m_Data) {
-            x *= scalar;
-        }
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n*scalar;});
     }
 
     // ============================= //
@@ -103,11 +91,11 @@ namespace meltrix {
         if (m_Rows != other.m_Rows || m_Cols != other.m_Cols) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
-        Matrix result = *this;
+        std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
         for (int i = 0; i < m_Data.size(); i++) {
-            result.m_Data[i] += other.m_Data[i];
+            newData.push_back(m_Data[i] + other.m_Data[i]);
         }
-        return result;
+        return Matrix(m_Rows, m_Cols, newData);
     }
 
     Matrix Matrix::operator-(const Matrix &other) const
@@ -115,11 +103,11 @@ namespace meltrix {
         if (m_Rows != other.m_Rows || m_Cols != other.m_Cols) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
-        Matrix result = *this;
+        std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
         for (int i = 0; i < m_Data.size(); i++) {
-            result.m_Data[i] -= other.m_Data[i];
+            newData.push_back(m_Data[i] - other.m_Data[i]);
         }
-        return result;
+        return Matrix(m_Rows, m_Cols, newData);
     }
 
     void Matrix::operator+=(const Matrix &other)
@@ -159,11 +147,11 @@ namespace meltrix {
         if (row < 0 || row >= m_Rows) {
             throw std::invalid_argument("Index out of bounds");
         }
-        Matrix result(1, m_Cols);
+        std::vector<double> newData = std::vector<double>(m_Cols);
         for (int i = 0; i < m_Cols; i++) {
-            result(0, i) = m_Data[row * m_Cols + i];
+            newData.push_back(m_Data[row * m_Cols + i]);
         }
-        return result;
+        return Matrix(1, m_Cols, newData);
     }
 
     Matrix Matrix::getCol(int col)
@@ -171,11 +159,11 @@ namespace meltrix {
         if (col < 0 || col >= m_Cols) {
             throw std::invalid_argument("Index out of bounds");
         }
-        Matrix result(m_Rows, 1);
+        std::vector<double> newData = std::vector<double>(m_Rows);
         for (int i = 0; i < m_Rows; i++) {
-            result(i, 0) = m_Data[i * m_Cols + col];
+            newData.push_back(m_Data[i * m_Cols + col]);
         }
-        return result;
+        return Matrix(m_Rows,1, newData);
     }
 
     Matrix Matrix::getSubMatrix(int row, int col)
@@ -186,7 +174,6 @@ namespace meltrix {
         if (m_Rows == 1 || m_Cols == 1) {
             throw std::invalid_argument("Cannot get sub-matrix from current matrix");
         }
-
         std::vector<double> newData = {};
         for (int i = 0; i < m_Rows; i++) {
             for (int j = 0; j < m_Cols; j++) {
@@ -197,9 +184,7 @@ namespace meltrix {
                 }
             }
         }
-
         return Matrix(m_Rows - 1, m_Cols - 1, newData);
-
     }
 
     // ============================= //
@@ -211,17 +196,19 @@ namespace meltrix {
         if (m_Cols != other.m_Rows) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
-        Matrix result(m_Rows, other.m_Cols);
+//        Matrix result(m_Rows, other.m_Cols);
+        std::vector<double> newData = {};
         for (int i = 0; i < m_Rows; i++) {
             for (int j = 0; j < other.m_Cols; j++) {
                 double sum = 0;
                 for (int k = 0; k < m_Cols; k++) {
                     sum += m_Data[i * m_Cols + k] * other.m_Data[k * other.m_Cols + j];
                 }
-                result(i, j) = sum;
+//                result(i, j) = sum;
+                newData.push_back(sum);
             }
         }
-        return result;
+        return Matrix(m_Rows, other.m_Cols, newData);
     }
 
     void Matrix::applyFunction(const std::function<double(double)>& func) {
