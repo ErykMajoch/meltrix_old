@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(meltrix VERSION 0.0.3 DESCRIPTION "A Simple Matrix Library Written in C++" LANGUAGES CXX)
+project(meltrix VERSION 0.0.4 DESCRIPTION "A Simple Matrix Library Written in C++" LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

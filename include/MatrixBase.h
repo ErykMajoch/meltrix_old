@@ -46,6 +46,7 @@ namespace meltrix {
         // Matrix Functions
         Matrix dot(Matrix& other);
         void applyFunction(const std::function<double(double)>& func);
+        void transpose();
 
         // Utility Functions
         void print() const;

@@ -25,7 +25,7 @@ namespace meltrix {
         m_Rows = rows;
         m_Cols = cols;
         m_Data.resize(rows * cols, value);
-    };
+    }
 
     /// \brief Default Constructor
     /// \param rows The number of rows in the matrix
@@ -41,7 +41,7 @@ namespace meltrix {
         m_Rows = rows;
         m_Cols = cols;
         m_Data = data;
-    };
+    }
 
 
     /// \brief Copy constructor
@@ -256,8 +256,22 @@ namespace meltrix {
         return result;
     }
 
+    /// \brief Apply a function to each individual item of the matrix
+    /// \param func The function to be executed
     void Matrix::applyFunction(const std::function<double(double)>& func) {
         std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), func);
+    }
+
+    /// \brief Transposes the matrix
+    void Matrix::transpose() {
+        std::vector<double> newData = {};
+        for (int col = 0; col < m_Cols; col++) {
+            for (int row = 0; row < m_Rows; row++) {
+                newData.push_back(m_Data[row * m_Cols + col]);
+            }
+        }
+        std::swap(m_Rows, m_Cols);
+        m_Data = newData;
     }
 
     // ============================= //

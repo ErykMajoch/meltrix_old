@@ -10,9 +10,8 @@ int main() {
     std::cout << "Current matrix:\n";
     m.print();
 
-    m.applyFunction([](double a) {return std::sin(a);});
-
-    std::cout << "\nAfter function:\n";
+    std::cout << "\nAfter transposition:\n";
+    m.transpose();
     m.print();
 
     return 0;
