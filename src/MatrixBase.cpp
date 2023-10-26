@@ -178,21 +178,6 @@ namespace meltrix {
         return result;
     }
 
-//    Matrix Matrix::getSubMatrix(int rowStart, int rowEnd, int colStart, int colEnd) {
-//        if (rowStart < 0 || rowStart >= m_Rows || rowEnd < 0 || rowEnd >= m_Rows || colStart < 0 || colStart >= m_Cols || colEnd < 0 || colEnd >= m_Cols) {
-//            throw std::invalid_argument("Index out of bounds");
-//        }
-//        if (rowStart > rowEnd || colStart > colEnd) {
-//            throw std::invalid_argument("Start index must be less than end index");
-//        }
-//        Matrix result(rowEnd - rowStart + 1, colEnd - colStart + 1);
-//        for (int i = rowStart; i <= rowEnd; i++) {
-//            for (int j = colStart; j <= colEnd; j++) {
-//                result(i - rowStart, j - colStart) = m_Data[i * m_Cols + j];
-//            }
-//        }
-//        return result;
-//    }
     Matrix Matrix::getSubMatrix(int row, int col)
     {
         if (row < 0 || row > m_Rows || col < 0 || col > m_Cols) {
@@ -212,6 +197,8 @@ namespace meltrix {
                 }
             }
         }
+
+        return Matrix(m_Rows - 1, m_Cols - 1, newData);
 
     }
 

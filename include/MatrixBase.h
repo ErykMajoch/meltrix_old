@@ -14,7 +14,7 @@ namespace meltrix {
     class Matrix {
     public:
 
-        // Constructors
+        // Matrix Constructors
         Matrix() = default;
         Matrix(int rows, int cols);
         Matrix(int rows, int cols, const double& value);
