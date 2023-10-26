@@ -2,10 +2,8 @@
 
 namespace meltrix {
 
-    /// \brief Default Constructor
-    /// \param rows The number of rows in the matrix
-    /// \param cols The number of columns in the matrix
-    Matrix::Matrix(int rows, int cols) {
+    Matrix::Matrix(int rows, int cols)
+    {
         if (rows <= 0 || cols <= 0) {
             throw std::invalid_argument("Matrix dimensions must be greater than 0");
         }
@@ -14,11 +12,8 @@ namespace meltrix {
         m_Data.resize(rows * cols);
     };
 
-    /// \brief Default Constructor
-    /// \param rows The number of rows in the matrix
-    /// \param cols The number of columns in the matrix
-    /// \param value The value to populate the matrix with
-    Matrix::Matrix(int rows, int cols, const double& value) {
+    Matrix::Matrix(int rows, int cols, const double& value)
+    {
         if (rows <= 0 || cols <= 0) {
             throw std::invalid_argument("Matrix dimensions must be greater than 0");
         }
@@ -27,11 +22,8 @@ namespace meltrix {
         m_Data.resize(rows * cols, value);
     }
 
-    /// \brief Default Constructor
-    /// \param rows The number of rows in the matrix
-    /// \param cols The number of columns in the matrix
-    /// \param data The data to populate the matrix with
-    Matrix::Matrix(int rows, int cols, const std::vector<double>& data) {
+    Matrix::Matrix(int rows, int cols, const std::vector<double>& data)
+    {
         if (rows <= 0 || cols <= 0) {
             throw std::invalid_argument("Matrix dimensions must be greater than 0");
         }
@@ -43,10 +35,8 @@ namespace meltrix {
         m_Data = data;
     }
 
-
-    /// \brief Copy constructor
-    /// \param other The matrix to copy
-    Matrix::Matrix(const Matrix& other) {
+    Matrix::Matrix(const Matrix& other)
+    {
         m_Rows = other.m_Rows;
         m_Cols = other.m_Cols;
         m_Data = other.m_Data;
@@ -56,10 +46,8 @@ namespace meltrix {
     // ===== SCALAR OPERATIONS ===== //
     // ============================= //
 
-    /// \brief Scalar addition
-    /// \param scalar The scalar to add
-    /// \return The resulting matrix
-    Matrix Matrix::operator+(const double &scalar) const {
+    Matrix Matrix::operator+(const double &scalar) const
+    {
         Matrix result = *this;
         for (double x : result.m_Data) {
             x += scalar;
@@ -67,10 +55,8 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Scalar subtraction
-    /// \param scalar The scalar to subtract
-    /// \return The resulting matrix
-    Matrix Matrix::operator-(const double &scalar) const {
+    Matrix Matrix::operator-(const double &scalar) const
+    {
         Matrix result = *this;
         for (double x : result.m_Data) {
             x -= scalar;
@@ -78,10 +64,8 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Scalar multiplication
-    /// \param scalar The scalar to multiply
-    /// \return The resulting matrix
-    Matrix Matrix::operator*(const double &scalar) const {
+    Matrix Matrix::operator*(const double &scalar) const
+    {
         Matrix result = *this;
         for (double x : result.m_Data) {
             x *= scalar;
@@ -89,25 +73,22 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Inline scalar addition
-    /// \param scalar The scalar to add
-    void Matrix::operator+=(const double &scalar) {
+    void Matrix::operator+=(const double &scalar)
+    {
         for (double x : m_Data) {
             x += scalar;
         }
     }
 
-    /// \brief Inline scalar subtraction
-    /// \param scalar The scalar to subtract
-    void Matrix::operator-=(const double &scalar) {
+    void Matrix::operator-=(const double &scalar)
+    {
         for (double x : m_Data) {
             x -= scalar;
         }
     }
 
-    /// \brief Inline scalar multiplication
-    /// \param scalar The scalar to multiply
-    void Matrix::operator*=(const double &scalar) {
+    void Matrix::operator*=(const double &scalar)
+    {
         for (double x : m_Data) {
             x *= scalar;
         }
@@ -117,10 +98,8 @@ namespace meltrix {
     // ===== MATRIX OPERATIONS ===== //
     // ============================= //
 
-    /// \brief Matrix addition
-    /// \param other The matrix to add
-    /// \return The resulting matrix
-    Matrix Matrix::operator+(const Matrix &other) const {
+    Matrix Matrix::operator+(const Matrix &other) const
+    {
         if (m_Rows != other.m_Rows || m_Cols != other.m_Cols) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
@@ -131,10 +110,8 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Matrix subtraction
-    /// \param other The matrix to subtract
-    /// \return The resulting matrix
-    Matrix Matrix::operator-(const Matrix &other) const {
+    Matrix Matrix::operator-(const Matrix &other) const
+    {
         if (m_Rows != other.m_Rows || m_Cols != other.m_Cols) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
@@ -145,9 +122,8 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Inline matrix addition
-    /// \param other The matrix to add
-    void Matrix::operator+=(const Matrix &other) {
+    void Matrix::operator+=(const Matrix &other)
+    {
         if (m_Rows != other.m_Rows || m_Cols != other.m_Cols) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
@@ -156,9 +132,8 @@ namespace meltrix {
         }
     }
 
-    /// \brief Inline matrix subtraction
-    /// \param other The matrix to subtract
-    void Matrix::operator-=(const Matrix &other) {
+    void Matrix::operator-=(const Matrix &other)
+    {
         if (m_Rows != other.m_Rows || m_Cols != other.m_Cols) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
@@ -171,21 +146,16 @@ namespace meltrix {
     // ===== ACCESSOR METHODS ====== //
     // ============================= //
 
-    /// \brief Accessor operator
-    /// \param row The row to access
-    /// \param col The column to access
-    /// \return The value at the specified row and column
-    double& Matrix::operator()(int row, int col) {
+    double& Matrix::operator()(int row, int col)
+    {
         if (row < 0 || row >= m_Rows || col < 0 || col >= m_Cols) {
             throw std::invalid_argument("Index out of bounds");
         }
         return m_Data[row * m_Cols + col];
     }
 
-    /// \brief Get a row of the matrix
-    /// \param row The row to get
-    /// \return The row as a matrix
-    Matrix Matrix::getRow(int row) {
+    Matrix Matrix::getRow(int row)
+    {
         if (row < 0 || row >= m_Rows) {
             throw std::invalid_argument("Index out of bounds");
         }
@@ -196,10 +166,8 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Get a column of the matrix
-    /// \param col The column to get
-    /// \return The column as a matrix
-    Matrix Matrix::getCol(int col) {
+    Matrix Matrix::getCol(int col)
+    {
         if (col < 0 || col >= m_Cols) {
             throw std::invalid_argument("Index out of bounds");
         }
@@ -210,12 +178,6 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Get a submatrix from the matrix
-    /// \param rowStart The starting row
-    /// \param rowEnd The ending row
-    /// \param colStart The starting column
-    /// \param colEnd The ending column
-    /// \return The submatrix
 //    Matrix Matrix::getSubMatrix(int rowStart, int rowEnd, int colStart, int colEnd) {
 //        if (rowStart < 0 || rowStart >= m_Rows || rowEnd < 0 || rowEnd >= m_Rows || colStart < 0 || colStart >= m_Cols || colEnd < 0 || colEnd >= m_Cols) {
 //            throw std::invalid_argument("Index out of bounds");
@@ -231,7 +193,8 @@ namespace meltrix {
 //        }
 //        return result;
 //    }
-    Matrix Matrix::getSubMatrix(int row, int col) {
+    Matrix Matrix::getSubMatrix(int row, int col)
+    {
         if (row < 0 || row > m_Rows || col < 0 || col > m_Cols) {
             throw std::invalid_argument("Index out of bounds");
         }
@@ -256,10 +219,8 @@ namespace meltrix {
     // ===== MATRIX FUNCTIONS ====== //
     // ============================= //
 
-    /// \brief Matrix multiplication
-    /// \param other The matrix to multiply
-    /// \return The resulting matrix
-    Matrix Matrix::dot(Matrix& other) {
+    Matrix Matrix::dot(Matrix& other)
+    {
         if (m_Cols != other.m_Rows) {
             throw std::invalid_argument("Matrix dimensions must match");
         }
@@ -276,14 +237,12 @@ namespace meltrix {
         return result;
     }
 
-    /// \brief Apply a function to each individual item of the matrix
-    /// \param func The function to be executed
     void Matrix::applyFunction(const std::function<double(double)>& func) {
         std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), func);
     }
 
-    /// \brief Transposes the matrix
-    void Matrix::transpose() {
+    void Matrix::transpose()
+    {
         std::vector<double> newData = {};
         for (int col = 0; col < m_Cols; col++) {
             for (int row = 0; row < m_Rows; row++) {
@@ -298,8 +257,8 @@ namespace meltrix {
     // ===== UTILITY FUNCTIONS ===== //
     // ============================= //
 
-    /// \brief Prints the matrix, aligning the elements
-    void Matrix::print() const {
+    void Matrix::print() const
+    {
         int maxLen = 0;
         for (double x : m_Data) {
             std::string str = std::to_string(x);
@@ -319,8 +278,8 @@ namespace meltrix {
         std::cout << "└ " << std::setw(maxLen * m_Cols + m_Cols - 1) << " " << " ┘\n";
     }
 
-    /// \brief Returns the shape of the matrix
-    std::pair<int, int> Matrix::shape() {
+    std::pair<int, int> Matrix::shape()
+    {
         return std::pair(m_Rows, m_Cols);
     }
 

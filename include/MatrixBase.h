@@ -11,9 +11,6 @@
 
 namespace meltrix {
 
-    /// <summary>
-    /// The base matrix class
-    /// </summary>
     class Matrix {
     public:
 
