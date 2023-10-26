@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Meltrix<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Meltrix<span id="projectnumber">&#160;0.0.4</span>
    </div>
    <div id="projectbrief">A Simple Matrix Library Written in C++</div>
   </td>
@@ -71,10 +71,12 @@ $(document).ready(function(){initNavTree('a00048.html',''); initResizable(); });
 <p>A matrix builder class which makes a matrix of zeros.  
  <a href="a00048.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00014_source.html">ZeroMatrix.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for meltrix::ZeroMatrix:</div>
-<div class="dyncontent">
+<p><code>#include &lt;<a class="el" href="">ZeroMatrix.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for meltrix::ZeroMatrix:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="a00048.png" usemap="#meltrix::ZeroMatrix_map" alt=""/>
   <map id="meltrix::ZeroMatrix_map" name="meltrix::ZeroMatrix_map">
@@ -141,17 +143,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5083aa21f3aa1c8252e9c602bf45d49 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#ab5083aa21f3aa1c8252e9c602bf45d49">getCol</a> (int col)</td></tr>
 <tr class="memdesc:ab5083aa21f3aa1c8252e9c602bf45d49 inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a column of the matrix.  <br /></td></tr>
 <tr class="separator:ab5083aa21f3aa1c8252e9c602bf45d49 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e7e0455394acd160038c1df96ac875 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#aa4e7e0455394acd160038c1df96ac875">getSubMatrix</a> (int rowStart, int rowEnd, int colStart, int colEnd)</td></tr>
-<tr class="memdesc:aa4e7e0455394acd160038c1df96ac875 inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a submatrix from the matrix.  <br /></td></tr>
-<tr class="separator:aa4e7e0455394acd160038c1df96ac875 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad81b03fb3b9b6ace152d1e2862ffd97 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#aad81b03fb3b9b6ace152d1e2862ffd97">getSubMatrix</a> (int row, int col)</td></tr>
+<tr class="memdesc:aad81b03fb3b9b6ace152d1e2862ffd97 inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a submatrix from the matrix.  <br /></td></tr>
+<tr class="separator:aad81b03fb3b9b6ace152d1e2862ffd97 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a485806ac6a1b325171b151872127f616 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a485806ac6a1b325171b151872127f616">dot</a> (<a class="el" href="a00040.html">Matrix</a> &amp;other)</td></tr>
 <tr class="memdesc:a485806ac6a1b325171b151872127f616 inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a00040.html" title="The base matrix class.">Matrix</a> multiplication.  <br /></td></tr>
 <tr class="separator:a485806ac6a1b325171b151872127f616 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9344f6c8455a70a852889692079c3d78 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a9344f6c8455a70a852889692079c3d78">applyFunction</a> (double(*func)(double))</td></tr>
-<tr class="separator:a9344f6c8455a70a852889692079c3d78 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad180ebddb5d427d798c8a061c76180cd inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#ad180ebddb5d427d798c8a061c76180cd">applyFunction</a> (const std::function&lt; double(double)&gt; &amp;func)</td></tr>
+<tr class="memdesc:ad180ebddb5d427d798c8a061c76180cd inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a function to each individual item of the matrix.  <br /></td></tr>
+<tr class="separator:ad180ebddb5d427d798c8a061c76180cd inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae75f44b5087f8a7527b90083a7e0ce37 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#ae75f44b5087f8a7527b90083a7e0ce37">transpose</a> ()</td></tr>
+<tr class="memdesc:ae75f44b5087f8a7527b90083a7e0ce37 inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transposes the matrix.  <br /></td></tr>
+<tr class="separator:ae75f44b5087f8a7527b90083a7e0ce37 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ac74064c70fa019989bb10175f7c01e inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a1ac74064c70fa019989bb10175f7c01e">print</a> () const</td></tr>
 <tr class="memdesc:a1ac74064c70fa019989bb10175f7c01e inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the matrix, aligning the elements.  <br /></td></tr>
 <tr class="separator:a1ac74064c70fa019989bb10175f7c01e inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7277eb411cfb7d2fadeadf75bd959cb5 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a7277eb411cfb7d2fadeadf75bd959cb5">shape</a> ()</td></tr>
+<tr class="memdesc:a7277eb411cfb7d2fadeadf75bd959cb5 inherit pub_methods_a00040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the shape of the matrix.  <br /></td></tr>
+<tr class="separator:a7277eb411cfb7d2fadeadf75bd959cb5 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a51fbdd3d541e6d3554272fcbbab4b2 inherit pub_methods_a00040"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a7a51fbdd3d541e6d3554272fcbbab4b2">~Matrix</a> ()=default</td></tr>
 <tr class="separator:a7a51fbdd3d541e6d3554272fcbbab4b2 inherit pub_methods_a00040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -191,12 +200,17 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                       {</div>
+<div class="line"><span class="lineno">    9</span>            <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> = size;</div>
+<div class="line"><span class="lineno">   10</span>            <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> = size;</div>
+<div class="line"><span class="lineno">   11</span>            <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.resize(size * size, 0);</div>
+<div class="line"><span class="lineno">   12</span>        };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="a00014_source.html">ZeroMatrix.h</a></li>
-<li><a class="el" href="a00026.html">ZeroMatrix.cpp</a></li>
+<li><a class="el" href="">ZeroMatrix.h</a></li>
+<li><a class="el" href="">ZeroMatrix.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_0',['Matrix',['../a00012.html',1,'meltrix']]]
+  ['identitymatrix_0',['IdentityMatrix',['../a00849.html',1,'meltrix']]]
 ];

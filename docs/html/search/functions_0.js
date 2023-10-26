@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_0',['Matrix',['../a00012.html#a22cd6fe2a57dc782abc36ddcf36e1796',1,'meltrix::Matrix']]]
+  ['applyfunction_0',['applyFunction',['../a00853.html#ad180ebddb5d427d798c8a061c76180cd',1,'meltrix::Matrix']]]
 ];

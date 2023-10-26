@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7ebase_0',['~Base',['../a00011.html#a306fb25541331080645a716286357ef9',1,'Base']]]
+  ['distribution_5ftype_0',['DISTRIBUTION_TYPE',['../a00033.html#a873fe87a4219916f8f732a48ca41c979',1,'meltrix']]],
+  ['dot_1',['dot',['../a00853.html#a485806ac6a1b325171b151872127f616',1,'meltrix::Matrix']]]
 ];

@@ -1,9 +1,9 @@
 var annotated_dup =
 [
-    [ "meltrix", "a00032.html", [
-      [ "IdentityMatrix", "a00036.html", "a00036" ],
-      [ "Matrix", "a00040.html", "a00040" ],
-      [ "RandomMatrix", "a00044.html", "a00044" ],
-      [ "ZeroMatrix", "a00048.html", "a00048" ]
+    [ "meltrix", "a00033.html", [
+      [ "IdentityMatrix", "a00849.html", "a00849" ],
+      [ "Matrix", "a00853.html", "a00853" ],
+      [ "RandomMatrix", "a00857.html", "a00857" ],
+      [ "ZeroMatrix", "a00861.html", "a00861" ]
     ] ]
 ];

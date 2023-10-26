@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Meltrix<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Meltrix<span id="projectnumber">&#160;0.0.4</span>
    </div>
    <div id="projectbrief">A Simple Matrix Library Written in C++</div>
   </td>
@@ -72,10 +72,12 @@ $(document).ready(function(){initNavTree('a00040.html',''); initResizable(); });
 <p>The base matrix class.  
  <a href="a00040.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00005_source.html">MatrixBase.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for meltrix::Matrix:</div>
-<div class="dyncontent">
+<p><code>#include &lt;<a class="el" href="">MatrixBase.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for meltrix::Matrix:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="a00040.png" usemap="#meltrix::Matrix_map" alt=""/>
   <map id="meltrix::Matrix_map" name="meltrix::Matrix_map">
@@ -140,17 +142,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5083aa21f3aa1c8252e9c602bf45d49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#ab5083aa21f3aa1c8252e9c602bf45d49">getCol</a> (int col)</td></tr>
 <tr class="memdesc:ab5083aa21f3aa1c8252e9c602bf45d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a column of the matrix.  <br /></td></tr>
 <tr class="separator:ab5083aa21f3aa1c8252e9c602bf45d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4e7e0455394acd160038c1df96ac875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#aa4e7e0455394acd160038c1df96ac875">getSubMatrix</a> (int rowStart, int rowEnd, int colStart, int colEnd)</td></tr>
-<tr class="memdesc:aa4e7e0455394acd160038c1df96ac875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a submatrix from the matrix.  <br /></td></tr>
-<tr class="separator:aa4e7e0455394acd160038c1df96ac875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad81b03fb3b9b6ace152d1e2862ffd97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#aad81b03fb3b9b6ace152d1e2862ffd97">getSubMatrix</a> (int row, int col)</td></tr>
+<tr class="memdesc:aad81b03fb3b9b6ace152d1e2862ffd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a submatrix from the matrix.  <br /></td></tr>
+<tr class="separator:aad81b03fb3b9b6ace152d1e2862ffd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a485806ac6a1b325171b151872127f616"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00040.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a485806ac6a1b325171b151872127f616">dot</a> (<a class="el" href="a00040.html">Matrix</a> &amp;other)</td></tr>
 <tr class="memdesc:a485806ac6a1b325171b151872127f616"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a00040.html" title="The base matrix class.">Matrix</a> multiplication.  <br /></td></tr>
 <tr class="separator:a485806ac6a1b325171b151872127f616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9344f6c8455a70a852889692079c3d78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a9344f6c8455a70a852889692079c3d78">applyFunction</a> (double(*func)(double))</td></tr>
-<tr class="separator:a9344f6c8455a70a852889692079c3d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad180ebddb5d427d798c8a061c76180cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#ad180ebddb5d427d798c8a061c76180cd">applyFunction</a> (const std::function&lt; double(double)&gt; &amp;func)</td></tr>
+<tr class="memdesc:ad180ebddb5d427d798c8a061c76180cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a function to each individual item of the matrix.  <br /></td></tr>
+<tr class="separator:ad180ebddb5d427d798c8a061c76180cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae75f44b5087f8a7527b90083a7e0ce37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#ae75f44b5087f8a7527b90083a7e0ce37">transpose</a> ()</td></tr>
+<tr class="memdesc:ae75f44b5087f8a7527b90083a7e0ce37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transposes the matrix.  <br /></td></tr>
+<tr class="separator:ae75f44b5087f8a7527b90083a7e0ce37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ac74064c70fa019989bb10175f7c01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a1ac74064c70fa019989bb10175f7c01e">print</a> () const</td></tr>
 <tr class="memdesc:a1ac74064c70fa019989bb10175f7c01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the matrix, aligning the elements.  <br /></td></tr>
 <tr class="separator:a1ac74064c70fa019989bb10175f7c01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7277eb411cfb7d2fadeadf75bd959cb5"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a7277eb411cfb7d2fadeadf75bd959cb5">shape</a> ()</td></tr>
+<tr class="memdesc:a7277eb411cfb7d2fadeadf75bd959cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the shape of the matrix.  <br /></td></tr>
+<tr class="separator:a7277eb411cfb7d2fadeadf75bd959cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a51fbdd3d541e6d3554272fcbbab4b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00040.html#a7a51fbdd3d541e6d3554272fcbbab4b2">~Matrix</a> ()=default</td></tr>
 <tr class="separator:a7a51fbdd3d541e6d3554272fcbbab4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -225,7 +234,15 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                     {</div>
+<div class="line"><span class="lineno">    9</span>        <span class="keywordflow">if</span> (rows &lt;= 0 || cols &lt;= 0) {</div>
+<div class="line"><span class="lineno">   10</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must be greater than 0&quot;</span>);</div>
+<div class="line"><span class="lineno">   11</span>        }</div>
+<div class="line"><span class="lineno">   12</span>        <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> = rows;</div>
+<div class="line"><span class="lineno">   13</span>        <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> = cols;</div>
+<div class="line"><span class="lineno">   14</span>        <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.resize(rows * cols);</div>
+<div class="line"><span class="lineno">   15</span>    };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8a7bc451d1f0c5edf79946feac97b688" name="a8a7bc451d1f0c5edf79946feac97b688"></a>
@@ -269,7 +286,15 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                          {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (rows &lt;= 0 || cols &lt;= 0) {</div>
+<div class="line"><span class="lineno">   23</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must be greater than 0&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
+<div class="line"><span class="lineno">   25</span>        <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> = rows;</div>
+<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> = cols;</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.resize(rows * cols, value);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8dbd90f9bbe1bc5d39179e508243cc06" name="a8dbd90f9bbe1bc5d39179e508243cc06"></a>
@@ -313,7 +338,18 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                                    {</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (rows &lt;= 0 || cols &lt;= 0) {</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must be greater than 0&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>        }</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (data.size() != rows * cols) {</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Data size must match matrix dimensions&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> = rows;</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> = cols;</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a> = data;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a34296b486071b9503da9b7786fad139b" name="a34296b486071b9503da9b7786fad139b"></a>
@@ -339,7 +375,12 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                      {</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> = other.m_Rows;</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> = other.m_Cols;</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a> = other.m_Data;</div>
+<div class="line"><span class="lineno">   53</span>    };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7a51fbdd3d541e6d3554272fcbbab4b2" name="a7a51fbdd3d541e6d3554272fcbbab4b2"></a>
@@ -368,8 +409,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9344f6c8455a70a852889692079c3d78" name="a9344f6c8455a70a852889692079c3d78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9344f6c8455a70a852889692079c3d78">&#9670;&#160;</a></span>applyFunction()</h2>
+<a id="ad180ebddb5d427d798c8a061c76180cd" name="ad180ebddb5d427d798c8a061c76180cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad180ebddb5d427d798c8a061c76180cd">&#9670;&#160;</a></span>applyFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,13 +418,24 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void meltrix::Matrix::applyFunction </td>
           <td>(</td>
-          <td class="paramtype">double(*)(double)&#160;</td>
+          <td class="paramtype">const std::function&lt; double(double)&gt; &amp;&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Apply a function to each individual item of the matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>The function to be executed </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>                                                                      {</div>
+<div class="line"><span class="lineno">  282</span>        std::transform(<a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.begin(), <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.end(), <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.begin(), func);</div>
+<div class="line"><span class="lineno">  283</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a485806ac6a1b325171b151872127f616" name="a485806ac6a1b325171b151872127f616"></a>
@@ -410,7 +462,23 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  262</span>                                    {</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> != other.m_Rows) {</div>
+<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must match&quot;</span>);</div>
+<div class="line"><span class="lineno">  265</span>        }</div>
+<div class="line"><span class="lineno">  266</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result(<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>, other.m_Cols);</div>
+<div class="line"><span class="lineno">  267</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>; i++) {</div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; other.m_Cols; j++) {</div>
+<div class="line"><span class="lineno">  269</span>                <span class="keywordtype">double</span> sum = 0;</div>
+<div class="line"><span class="lineno">  270</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>; k++) {</div>
+<div class="line"><span class="lineno">  271</span>                    sum += <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + k] * other.m_Data[k * other.m_Cols + j];</div>
+<div class="line"><span class="lineno">  272</span>                }</div>
+<div class="line"><span class="lineno">  273</span>                result(i, j) = sum;</div>
+<div class="line"><span class="lineno">  274</span>            }</div>
+<div class="line"><span class="lineno">  275</span>        }</div>
+<div class="line"><span class="lineno">  276</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  277</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab5083aa21f3aa1c8252e9c602bf45d49" name="ab5083aa21f3aa1c8252e9c602bf45d49"></a>
@@ -437,7 +505,17 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The column as a matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  202</span>                                 {</div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">if</span> (col &lt; 0 || col &gt;= <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>) {</div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Index out of bounds&quot;</span>);</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result(<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>, 1);</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>; i++) {</div>
+<div class="line"><span class="lineno">  208</span>            result(i, 0) = <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + col];</div>
+<div class="line"><span class="lineno">  209</span>        }</div>
+<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  211</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5513ed51b101e3d8daaa497d5a715497" name="a5513ed51b101e3d8daaa497d5a715497"></a>
@@ -464,11 +542,21 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The row as a matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  188</span>                                 {</div>
+<div class="line"><span class="lineno">  189</span>        <span class="keywordflow">if</span> (row &lt; 0 || row &gt;= <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>) {</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Index out of bounds&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span>        }</div>
+<div class="line"><span class="lineno">  192</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result(1, <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>);</div>
+<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>; i++) {</div>
+<div class="line"><span class="lineno">  194</span>            result(0, i) = <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[row * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + i];</div>
+<div class="line"><span class="lineno">  195</span>        }</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  197</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="aa4e7e0455394acd160038c1df96ac875" name="aa4e7e0455394acd160038c1df96ac875"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4e7e0455394acd160038c1df96ac875">&#9670;&#160;</a></span>getSubMatrix()</h2>
+<a id="aad81b03fb3b9b6ace152d1e2862ffd97" name="aad81b03fb3b9b6ace152d1e2862ffd97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad81b03fb3b9b6ace152d1e2862ffd97">&#9670;&#160;</a></span>getSubMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -477,25 +565,13 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="a00040.html">Matrix</a> meltrix::Matrix::getSubMatrix </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>rowStart</em>, </td>
+          <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>rowEnd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>colStart</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>colEnd</em>&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -516,7 +592,27 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The submatrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  234</span>                                                {</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">if</span> (row &lt; 0 || row &gt; <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> || col &lt; 0 || col &gt; <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>) {</div>
+<div class="line"><span class="lineno">  236</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Index out of bounds&quot;</span>);</div>
+<div class="line"><span class="lineno">  237</span>        }</div>
+<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> == 1 || <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> == 1) {</div>
+<div class="line"><span class="lineno">  239</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Cannot get sub-matrix from current matrix&quot;</span>);</div>
+<div class="line"><span class="lineno">  240</span>        }</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>        std::vector&lt;double&gt; newData = {};</div>
+<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>; i++) {</div>
+<div class="line"><span class="lineno">  244</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>; j++) {</div>
+<div class="line"><span class="lineno">  245</span>                <span class="keywordflow">if</span> (i == row || j == col) {</div>
+<div class="line"><span class="lineno">  246</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  247</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  248</span>                    newData.push_back(<a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + j]);</div>
+<div class="line"><span class="lineno">  249</span>                }</div>
+<div class="line"><span class="lineno">  250</span>            }</div>
+<div class="line"><span class="lineno">  251</span>        }</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a29bab2861f70445c21791dd08127e2a9" name="a29bab2861f70445c21791dd08127e2a9"></a>
@@ -554,7 +650,13 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value at the specified row and column </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  178</span>                                               {</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span> (row &lt; 0 || row &gt;= <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> || col &lt; 0 || col &gt;= <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>) {</div>
+<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Index out of bounds&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>        }</div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[row * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + col];</div>
+<div class="line"><span class="lineno">  183</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8c2371ed07e369ba50b9c0664efaffc3" name="a8c2371ed07e369ba50b9c0664efaffc3"></a>
@@ -581,7 +683,14 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                       {</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result = *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : result.<a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">   87</span>            x *= scalar;</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aff5ef09bf1ea93076ac405aac3d58363" name="aff5ef09bf1ea93076ac405aac3d58363"></a>
@@ -607,7 +716,12 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                                {</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">  112</span>            x *= scalar;</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa9a5e8da962c6aa7682259df91692568" name="aa9a5e8da962c6aa7682259df91692568"></a>
@@ -634,7 +748,14 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                                                       {</div>
+<div class="line"><span class="lineno">   63</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result = *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : result.<a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">   65</span>            x += scalar;</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1c6ea562c63198e62a64e548f70873e8" name="a1c6ea562c63198e62a64e548f70873e8"></a>
@@ -661,7 +782,17 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                                      {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> != other.m_Rows || <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> != other.m_Cols) {</div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must match&quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>        }</div>
+<div class="line"><span class="lineno">  127</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result = *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.size(); i++) {</div>
+<div class="line"><span class="lineno">  129</span>            result.m_Data[i] += other.m_Data[i];</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac395dbd5835984892d894c3da5bd63e7" name="ac395dbd5835984892d894c3da5bd63e7"></a>
@@ -687,7 +818,12 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   94</span>                                                {</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">   96</span>            x += scalar;</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab559715cd0cdde0401f233796b4f690b" name="ab559715cd0cdde0401f233796b4f690b"></a>
@@ -713,7 +849,15 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                                               {</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> != other.m_Rows || <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> != other.m_Cols) {</div>
+<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must match&quot;</span>);</div>
+<div class="line"><span class="lineno">  153</span>        }</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.size(); i++) {</div>
+<div class="line"><span class="lineno">  155</span>            <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i] += other.m_Data[i];</div>
+<div class="line"><span class="lineno">  156</span>        }</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4c1982fa5ac94d201eb352238799331a" name="a4c1982fa5ac94d201eb352238799331a"></a>
@@ -740,7 +884,14 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                       {</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result = *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : result.<a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">   76</span>            x -= scalar;</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7a864bb51b4452274541e91840aece5e" name="a7a864bb51b4452274541e91840aece5e"></a>
@@ -767,7 +918,17 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The resulting matrix </dd></dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                                                      {</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> != other.m_Rows || <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> != other.m_Cols) {</div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must match&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span>        }</div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="a00040.html#a7e5d149ac717f906c1caef31d4863d6c">Matrix</a> result = *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.size(); i++) {</div>
+<div class="line"><span class="lineno">  143</span>            result.m_Data[i] -= other.m_Data[i];</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa7ad3f980cb58a5b7447868e0a4a6981" name="aa7ad3f980cb58a5b7447868e0a4a6981"></a>
@@ -793,7 +954,12 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                {</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">  104</span>            x -= scalar;</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a56938642e015af783677f2bbc397627e" name="a56938642e015af783677f2bbc397627e"></a>
@@ -819,7 +985,15 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<div class="fragment"><div class="line"><span class="lineno">  161</span>                                               {</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> != other.m_Rows || <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> != other.m_Cols) {</div>
+<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix dimensions must match&quot;</span>);</div>
+<div class="line"><span class="lineno">  164</span>        }</div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.size(); i++) {</div>
+<div class="line"><span class="lineno">  166</span>            <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i] -= other.m_Data[i];</div>
+<div class="line"><span class="lineno">  167</span>        }</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1ac74064c70fa019989bb10175f7c01e" name="a1ac74064c70fa019989bb10175f7c01e"></a>
@@ -838,7 +1012,77 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints the matrix, aligning the elements. </p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>                             {</div>
+<div class="line"><span class="lineno">  303</span>        <span class="keywordtype">int</span> maxLen = 0;</div>
+<div class="line"><span class="lineno">  304</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> x : <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>) {</div>
+<div class="line"><span class="lineno">  305</span>            std::string str = std::to_string(x);</div>
+<div class="line"><span class="lineno">  306</span>            str.erase ( str.find_last_not_of(<span class="charliteral">&#39;0&#39;</span>) + 1, std::string::npos );</div>
+<div class="line"><span class="lineno">  307</span>            str.erase ( str.find_last_not_of(<span class="charliteral">&#39;.&#39;</span>) + 1, std::string::npos );</div>
+<div class="line"><span class="lineno">  308</span>            <span class="keywordtype">int</span> len = str.length();</div>
+<div class="line"><span class="lineno">  309</span>            maxLen = std::max(maxLen, len);</div>
+<div class="line"><span class="lineno">  310</span>        }</div>
+<div class="line"><span class="lineno">  311</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;┌ &quot;</span> &lt;&lt; std::setw(maxLen * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> - 1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>; i++) {</div>
+<div class="line"><span class="lineno">  313</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span>;</div>
+<div class="line"><span class="lineno">  314</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>; j++) {</div>
+<div class="line"><span class="lineno">  315</span>                std::cout &lt;&lt; std::setw(maxLen) &lt;&lt; <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  316</span>            }</div>
+<div class="line"><span class="lineno">  317</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;│\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  318</span>        }</div>
+<div class="line"><span class="lineno">  319</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;└ &quot;</span> &lt;&lt; std::setw(maxLen * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> - 1) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7277eb411cfb7d2fadeadf75bd959cb5" name="a7277eb411cfb7d2fadeadf75bd959cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7277eb411cfb7d2fadeadf75bd959cb5">&#9670;&#160;</a></span>shape()</h2>
 
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; int, int &gt; meltrix::Matrix::shape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the shape of the matrix. </p>
+<div class="fragment"><div class="line"><span class="lineno">  323</span>                                    {</div>
+<div class="line"><span class="lineno">  324</span>        <span class="keywordflow">return</span> std::pair(<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>, <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>);</div>
+<div class="line"><span class="lineno">  325</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae75f44b5087f8a7527b90083a7e0ce37" name="ae75f44b5087f8a7527b90083a7e0ce37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75f44b5087f8a7527b90083a7e0ce37">&#9670;&#160;</a></span>transpose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void meltrix::Matrix::transpose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transposes the matrix. </p>
+<div class="fragment"><div class="line"><span class="lineno">  286</span>                           {</div>
+<div class="line"><span class="lineno">  287</span>        std::vector&lt;double&gt; newData = {};</div>
+<div class="line"><span class="lineno">  288</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>; col++) {</div>
+<div class="line"><span class="lineno">  289</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; <a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>; row++) {</div>
+<div class="line"><span class="lineno">  290</span>                newData.push_back(<a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[row * <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> + col]);</div>
+<div class="line"><span class="lineno">  291</span>            }</div>
+<div class="line"><span class="lineno">  292</span>        }</div>
+<div class="line"><span class="lineno">  293</span>        std::swap(<a class="code hl_variable" href="a00040.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a>, <a class="code hl_variable" href="a00040.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a>);</div>
+<div class="line"><span class="lineno">  294</span>        <a class="code hl_variable" href="a00040.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a> = newData;</div>
+<div class="line"><span class="lineno">  295</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -909,8 +1153,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="a00005_source.html">MatrixBase.h</a></li>
-<li><a class="el" href="a00020.html">MatrixBase.cpp</a></li>
+<li><a class="el" href="">MatrixBase.h</a></li>
+<li><a class="el" href="">MatrixBase.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

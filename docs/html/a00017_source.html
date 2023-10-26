@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Meltrix: MatrixBase.tpp Source File</title>
+<title>Meltrix: IdentityMatrix.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Meltrix<span id="projectnumber">&#160;0.0</span>
+   <div id="projectname">Meltrix<span id="projectnumber">&#160;0.0.4</span>
    </div>
    <div id="projectbrief">A Simple Matrix Library Written in C++</div>
   </td>
@@ -61,43 +61,32 @@ $(document).ready(function(){initNavTree('a00017_source.html',''); initResizable
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">MatrixBase.tpp</div></div>
+  <div class="headertitle"><div class="title">IdentityMatrix.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>#include &quot;MatrixBase.h&quot;</div>
+<a href="a00017.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00002.html">IdentityMatrix.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>namespace meltrix {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    template&lt;typename T&gt;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    Matrix&lt;T&gt;::Matrix(int rows, int cols) : m_Rows(rows), m_Cols(cols) {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        m_Data.resize(rows * cols);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    };</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    template&lt;typename T&gt;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Matrix&lt;T&gt;::Matrix(int rows, int cols, const T&amp; value) : m_Rows(rows), m_Cols(cols) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        m_Data.resize(rows * cols, value);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    };</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    template&lt;typename T&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Matrix&lt;T&gt;::Matrix(const Matrix&lt;T&gt;&amp; other) : m_Rows(other.m_Rows), m_Cols(other.m_Cols), m_Data(other.m_Data) {};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    template&lt;typename T&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    void Matrix&lt;T&gt;::Print() const {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        for (int i = 0; i &lt; m_Rows; i++) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            for (int j = 0; j &lt; m_Cols; j++) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                std::cout &lt;&lt; m_Data[i * m_Cols + j] &lt;&lt; &quot; &quot;;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    };</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>} // meltrix</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00033.html">meltrix</a> {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    /// \brief Initializes a new instance of the &lt;see cref=&quot;IdentityMatrix&quot;/&gt; class.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">    /// \param size The size of the matrix</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00849.html#ac5a0442a6bfbf87deb81bed938afd091">    8</a></span>    <a class="code hl_function" href="a00849.html#ac5a0442a6bfbf87deb81bed938afd091" title="Initializes a new instance of the IdentityMatrix class.">IdentityMatrix::IdentityMatrix</a>(<span class="keywordtype">int</span> size) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_variable" href="a00853.html#a056381f03350ba0517bf9507a726a6a5">m_Rows</a> = size;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_variable" href="a00853.html#a9939969b10fc60e687d770c9490f16b1">m_Cols</a> = size;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_variable" href="a00853.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>.resize(size * size, 0);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <a class="code hl_variable" href="a00853.html#afc4fa2b520d7eb2276828685ec5e8332">m_Data</a>[i * size + i] = 1;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <span class="comment">// meltrix</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>MatrixBase.tpp</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00017.html">IdentityMatrix.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>
