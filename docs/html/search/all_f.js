@@ -1,4 +1,4 @@
-var searchData=
-[
-  ['_7ematrix_0',['~Matrix',['../a00853.html#a7a51fbdd3d541e6d3554272fcbbab4b2',1,'meltrix::Matrix']]]
-];
+var searchData =
+    [
+        ['uniform_0', ['UNIFORM', ['../a00033.html#a873fe87a4219916f8f732a48ca41c979a91991c005cd53a444a55ffe2f0eafbd6', 1, 'meltrix']]]
+    ];

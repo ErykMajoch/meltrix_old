@@ -1,4 +1,4 @@
-var searchData=
-[
-  ['_7ematrix_0',['~Matrix',['../a00853.html#a7a51fbdd3d541e6d3554272fcbbab4b2',1,'meltrix::Matrix']]]
-];
+var searchData =
+    [
+        ['transpose_0', ['transpose', ['../a00853.html#ae75f44b5087f8a7527b90083a7e0ce37', 1, 'meltrix::Matrix']]]
+    ];
