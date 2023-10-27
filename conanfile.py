@@ -1,10 +1,24 @@
 from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
+import re
+
+
+def get_version():
+    try:
+        version = ""
+        with open("CMakeLists.txt", "r") as file:
+            line = [x for x in file.readlines() if "LIBRARY_VERSION" in x]
+            line = line[0].strip()
+            version = re.search("[0-9]+(\.[0-9]+)+", line)
+            version = version.group().strip()
+        return version
+    except Exception as e:
+        return None
 
 
 class meltrixRecipe(ConanFile):
     name = "meltrix"
-    version = "0.0.4"
+    version = get_version()
 
     # Optional metadata
     license = "GPL 3.0 license "
@@ -19,7 +33,7 @@ class meltrixRecipe(ConanFile):
     default_options = {"shared": False, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
-    exports_sources = "CMakeLists.txt", "src/*", "include/*"
+    exports_sources = "CMakeLists.txt", "src/*", "include/*", "unit_tests/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -38,10 +52,14 @@ class meltrixRecipe(ConanFile):
         tc = CMakeToolchain(self)
         tc.generate()
 
+    def requirements(self):
+        self.test_requires("catch2/3.4.0")
+
     def build(self):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
+        cmake.test()
 
     def package(self):
         cmake = CMake(self)

@@ -1,15 +1,20 @@
 cmake_minimum_required(VERSION 3.15)
-project(meltrix VERSION 0.0.4 DESCRIPTION "A Simple Matrix Library Written in C++" LANGUAGES CXX)
+project(meltrix DESCRIPTION "A Simple Matrix Library Written in C++" LANGUAGES CXX)
+
+set(LIBRARY_VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+enable_testing()
+
 add_subdirectory(include)
 add_subdirectory(src)
+add_subdirectory(unit_tests)
 
-add_library("${PROJECT_NAME}" ${SOURCE_LIST} )
+add_library("${PROJECT_NAME}" ${SOURCE_LIST})
 target_include_directories("${PROJECT_NAME}" PUBLIC include)
 set_target_properties("${PROJECT_NAME}" PROPERTIES PUBLIC_HEADER "${HEADER_LIST}")
-set_target_properties("${PROJECT_NAME}" PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties("${PROJECT_NAME}" PROPERTIES VERSION ${LIBRARY_VERSION})
 
 install(TARGETS "${PROJECT_NAME}")
