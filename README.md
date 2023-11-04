@@ -1,7 +1,19 @@
-# Meltrix
+<div align="center">
+<pre>
+███╗   ███╗███████╗██╗  ████████╗██████╗ ██╗██╗  ██╗
+████╗ ████║██╔════╝██║  ╚══██╔══╝██╔══██╗██║╚██╗██╔╝
+██╔████╔██║█████╗  ██║     ██║   ██████╔╝██║ ╚███╔╝ 
+██║╚██╔╝██║██╔══╝  ██║     ██║   ██╔══██╗██║ ██╔██╗ 
+██║ ╚═╝ ██║███████╗███████╗██║   ██║  ██║██║██╔╝ ██╗
+╚═╝     ╚═╝╚══════╝╚══════╝╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
+---
+A simple C++ matrix library
+</pre>
 
 ![Static Badge](https://img.shields.io/badge/Language-C%2B%2B%2017-purple)
 ![GitHub](https://img.shields.io/github/license/ErykMajoch/Meltrix?style=flat&label=License&color=purple) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ErykMajoch/Meltrix?label=Library%20Size&color=purple) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ErykMajoch/Meltrix/cmake-multi-platform.yml?label=Build)
+
+</div>
 
 ## Introduction
 
