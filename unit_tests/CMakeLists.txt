@@ -1,7 +1,7 @@
-find_package(Catch2 3)
+find_package(Catch2 3 QUIET)
 
 if (NOT ${Catch2_FOUND})
-    message("================== NO CATCH2 FOUND!!! ==================")
+    message("Catch2 not found, fetching from git")
     Include(FetchContent)
     FetchContent_Declare(
             Catch2
@@ -9,7 +9,7 @@ if (NOT ${Catch2_FOUND})
             GIT_TAG v3.4.0
     )
     FetchContent_MakeAvailable(Catch2)
-endif ()
+endif()
 
 set(TEST_SOURCES
     default_initialisation_test.cpp
