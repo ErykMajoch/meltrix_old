@@ -11,19 +11,13 @@ if (NOT ${Catch2_FOUND})
     FetchContent_MakeAvailable(Catch2)
 endif ()
 
-# add_executable(default_initialisation default_initialisation_test.cpp)
-
-# target_link_libraries(default_initialisation PRIVATE Catch2::Catch2WithMain meltrix)
-
-# add_test(NAME default_initialisation COMMAND default_initialisation)
-
 set(TEST_SOURCES
     default_initialisation_test.cpp
 )
 
-foreach(testSrc ${TEST_SOURCES})
-    get_filename_component(testName ${testSrc} NAME_WE)
-    add_executable(${testName} ${testSrc})
+foreach(test ${TEST_SOURCES})
+    get_filename_component(testName ${test} NAME_WE)
+    add_executable(${testName} ${test})
     target_link_libraries(${testName} PRIVATE meltrix Catch2::Catch2WithMain)
     add_test(NAME ${testName} COMMAND ${testName})
-endforeach(testSrc)
+endforeach(test)
