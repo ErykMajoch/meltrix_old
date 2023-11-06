@@ -1,24 +1,8 @@
 from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
-import re
-
-
-def get_version():
-    try:
-        version = ""
-        with open("CMakeLists.txt", "r") as file:
-            line = [x for x in file.readlines() if "LIBRARY_VERSION" in x]
-            line = line[0].strip()
-            version = re.search("[0-9]+(\.[0-9]+)+", line)
-            version = version.group().strip()
-        return version
-    except Exception as e:
-        return None
-
-
 class meltrixRecipe(ConanFile):
     name = "meltrix"
-    version = get_version()
+    version = "0.1.1"
 
     # Optional metadata
     license = "GPL 3.0 license "
