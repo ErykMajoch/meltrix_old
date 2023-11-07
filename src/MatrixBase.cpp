@@ -43,6 +43,18 @@ namespace meltrix {
     }
 
     // ============================= //
+    // ===== MATRIX COMPARISON ===== //
+    // ============================= //
+
+    bool Matrix::operator==(const Matrix &other) const {
+        return m_Rows == other.m_Rows && m_Cols == other.m_Cols && m_Data == other.m_Data;
+    }
+
+    bool Matrix::operator!=(const Matrix &other) const {
+        return !(m_Rows == other.m_Rows && m_Cols == other.m_Cols && m_Data == other.m_Data);
+    }
+
+    // ============================= //
     // ===== SCALAR OPERATIONS ===== //
     // ============================= //
 

@@ -21,6 +21,10 @@ namespace meltrix {
         Matrix(int rows, int cols, const std::vector<double>& data);
         Matrix(const Matrix& other);
 
+        // Matrix Comparison
+        bool operator==(const Matrix& other) const;
+        bool operator!=(const Matrix& other) const;
+
         // Scalar Operations
         Matrix operator+(const double& scalar) const;
         Matrix operator-(const double& scalar) const;
