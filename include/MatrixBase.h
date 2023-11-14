@@ -29,9 +29,12 @@ namespace meltrix {
         Matrix operator+(const double& scalar) const;
         Matrix operator-(const double& scalar) const;
         Matrix operator*(const double& scalar) const;
+        Matrix operator/(const double& scalar) const;
+
         void operator+=(const double& scalar);
         void operator-=(const double& scalar);
         void operator*=(const double& scalar);
+        void operator/=(const double& scalar);
 
         // Matrix Operations
         Matrix operator+(const Matrix& other) const;
@@ -47,7 +50,7 @@ namespace meltrix {
 
         // Matrix Functions
         Matrix dot(Matrix& other);
-        void applyFunction(const std::function<double(double)>& func);
+        void apply(const std::function<double(double)>& func);
         void transpose();
 
         // Utility Functions

@@ -61,37 +61,55 @@ namespace meltrix {
     Matrix Matrix::operator+(const double &scalar) const
     {
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
-        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n+scalar;});
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n + scalar;});
         return Matrix(m_Rows, m_Cols, newData);
     }
 
     Matrix Matrix::operator-(const double &scalar) const
     {
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
-        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n-scalar;});
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n - scalar;});
         return Matrix(m_Rows, m_Cols, newData);
     }
 
     Matrix Matrix::operator*(const double &scalar) const
     {
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
-        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n*scalar;});
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n * scalar;});
+        return Matrix(m_Rows, m_Cols, newData);
+    }
+
+    Matrix Matrix::operator/(const double &scalar) const
+    {
+        if (scalar == 0) {
+            throw std::invalid_argument("Cannot divide elements by 0");
+        }
+        std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
+        std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n / scalar;});
         return Matrix(m_Rows, m_Cols, newData);
     }
 
     void Matrix::operator+=(const double &scalar)
     {
-        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n+scalar;});
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n + scalar;});
     }
 
     void Matrix::operator-=(const double &scalar)
     {
-        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n-scalar;});
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n - scalar;});
     }
 
     void Matrix::operator*=(const double &scalar)
     {
-        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n*scalar;});
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n * scalar;});
+    }
+
+    void Matrix::operator/=(const double &scalar)
+    {
+        if (scalar == 0) {
+            throw std::invalid_argument("Cannot divide elements by 0");
+        }
+        std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), [&](double n){return n / scalar;});
     }
 
     // ============================= //
@@ -223,7 +241,7 @@ namespace meltrix {
         return Matrix(m_Rows, other.m_Cols, newData);
     }
 
-    void Matrix::applyFunction(const std::function<double(double)>& func) {
+    void Matrix::apply(const std::function<double(double)>& func) {
         std::transform(m_Data.begin(), m_Data.end(), m_Data.begin(), func);
     }
 
