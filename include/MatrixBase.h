@@ -39,6 +39,7 @@ namespace meltrix {
         // Matrix Operations
         Matrix operator+(const Matrix& other) const;
         Matrix operator-(const Matrix& other) const;
+        
         void operator+=(const Matrix& other);
         void operator-=(const Matrix& other);
 

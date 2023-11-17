@@ -14,6 +14,7 @@ endif()
 set(TEST_SOURCES
     default_initialisation_test.cpp
     matrix_comparison_test.cpp
+    basic_operations_test.cpp
 )
 
 foreach(test ${TEST_SOURCES})
