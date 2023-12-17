@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <functional>
 #include <utility>
+#include <cmath>
+#include <numeric>
 
 namespace meltrix {
 
@@ -53,6 +55,7 @@ namespace meltrix {
         Matrix dot(Matrix& other);
         void apply(const std::function<double(double)>& func);
         void transpose();
+        double determinant();
 
         // Utility Functions
         void print() const;

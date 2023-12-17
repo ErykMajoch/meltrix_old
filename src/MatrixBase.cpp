@@ -27,7 +27,7 @@ namespace meltrix {
         if (rows <= 0 || cols <= 0) {
             throw std::invalid_argument("Matrix dimensions must be greater than 0");
         }
-        if (data.size() != rows * cols) {
+        if (data.size() != (rows * cols)) {
             throw std::invalid_argument("Data size must match matrix dimensions");
         }
         m_Rows = rows;
@@ -62,21 +62,21 @@ namespace meltrix {
     {
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
         std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n + scalar;});
-        return Matrix(m_Rows, m_Cols, newData);
+        return Matrix{m_Rows, m_Cols, newData};
     }
 
     Matrix Matrix::operator-(const double &scalar) const
     {
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
         std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n - scalar;});
-        return Matrix(m_Rows, m_Cols, newData);
+        return Matrix{m_Rows, m_Cols, newData};
     }
 
     Matrix Matrix::operator*(const double &scalar) const
     {
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
         std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n * scalar;});
-        return Matrix(m_Rows, m_Cols, newData);
+        return Matrix{m_Rows, m_Cols, newData};
     }
 
     Matrix Matrix::operator/(const double &scalar) const
@@ -86,7 +86,7 @@ namespace meltrix {
         }
         std::vector<double> newData = std::vector<double>(m_Rows * m_Cols);
         std::transform(m_Data.begin(), m_Data.end(), newData.begin(), [&](double n){return n / scalar;});
-        return Matrix(m_Rows, m_Cols, newData);
+        return Matrix{m_Rows, m_Cols, newData};
     }
 
     void Matrix::operator+=(const double &scalar)
@@ -125,7 +125,7 @@ namespace meltrix {
         for (int i = 0; i < m_Data.size(); i++) {
             newData.push_back(m_Data[i] + other.m_Data[i]);
         }
-        return Matrix(m_Rows, m_Cols, newData);
+        return Matrix{m_Rows, m_Cols, newData};
     }
 
     Matrix Matrix::operator-(const Matrix &other) const
@@ -137,7 +137,7 @@ namespace meltrix {
         for (int i = 0; i < m_Data.size(); i++) {
             newData.push_back(m_Data[i] - other.m_Data[i]);
         }
-        return Matrix(m_Rows, m_Cols, newData);
+        return Matrix{m_Rows, m_Cols, newData};
     }
 
     void Matrix::operator+=(const Matrix &other)
@@ -181,7 +181,7 @@ namespace meltrix {
         for (int i = 0; i < m_Cols; i++) {
             newData.push_back(m_Data[row * m_Cols + i]);
         }
-        return Matrix(1, m_Cols, newData);
+        return Matrix{1, m_Cols, newData};
     }
 
     Matrix Matrix::getCol(int col)
@@ -193,7 +193,7 @@ namespace meltrix {
         for (int i = 0; i < m_Rows; i++) {
             newData.push_back(m_Data[i * m_Cols + col]);
         }
-        return Matrix(m_Rows,1, newData);
+        return Matrix{m_Rows, 1, newData};
     }
 
     Matrix Matrix::getSubMatrix(int row, int col)
@@ -214,7 +214,7 @@ namespace meltrix {
                 }
             }
         }
-        return Matrix(m_Rows - 1, m_Cols - 1, newData);
+        return Matrix{m_Rows - 1, m_Cols - 1, newData};
     }
 
     // ============================= //
@@ -238,7 +238,7 @@ namespace meltrix {
                 newData.push_back(sum);
             }
         }
-        return Matrix(m_Rows, other.m_Cols, newData);
+        return Matrix{m_Rows, other.m_Cols, newData};
     }
 
     void Matrix::apply(const std::function<double(double)>& func) {
@@ -257,6 +257,29 @@ namespace meltrix {
         m_Data = newData;
     }
 
+    double Matrix::determinant()
+    {
+        if (m_Rows != m_Cols) {
+            throw std::invalid_argument("Matrix must be square");
+        }
+        double det = 0.0;
+        switch (m_Rows) {
+            case 1:
+                det = m_Data[0];
+                break;
+            case 2:
+                det = m_Data[0] * m_Data[3] - m_Data[1] * m_Data[2];
+                break;
+            default:
+                for (int i = 0; i < m_Rows; i++) {
+                    Matrix sub = getSubMatrix(0, i);
+                    det += pow(-1, i) * m_Data[i] * sub.determinant();
+                }
+                break;
+        }
+        return det;
+    }
+
     // ============================= //
     // ===== UTILITY FUNCTIONS ===== //
     // ============================= //
@@ -268,7 +291,7 @@ namespace meltrix {
             std::string str = std::to_string(x);
             str.erase ( str.find_last_not_of('0') + 1, std::string::npos );
             str.erase ( str.find_last_not_of('.') + 1, std::string::npos );
-            int len = str.length();
+            int len = static_cast<int>(str.length());
             maxLen = std::max(maxLen, len);
         }
         std::cout << "┌ " << std::setw(maxLen * m_Cols + m_Cols - 1) << " " << " ┐\n";
@@ -284,7 +307,7 @@ namespace meltrix {
 
     std::pair<int, int> Matrix::shape()
     {
-        return std::pair(m_Rows, m_Cols);
+        return std::pair{m_Rows, m_Cols};
     }
 
 } // meltrix
